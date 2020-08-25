@@ -8,7 +8,7 @@ namespace SoftwareProcess.Models
 {
     public class LectureAdmin
     {
-        public int UserID { get; set; }
+        public int ID { get; set; }
 
         public string UserName { get; set; }
 

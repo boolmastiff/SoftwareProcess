@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SoftwareProcess.Controllers
+namespace SoftwareProcess.Data
 {
-    public class LectureAdminContext : DbContext
+    public class UcolContext : DbContext
     {
-        public LectureAdminContext(DbContextOptions<LectureAdminContext> options) : base(options)
-        { }
 
+        public UcolContext(DbContextOptions<UcolContext> options) : base(options)
+        { }
         public DbSet<LectureAdmin> LectureAdmins { get; set; }
+        public DbSet<Student> Students { get; set; }
     }
 }
