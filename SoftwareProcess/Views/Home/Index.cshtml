@@ -3,22 +3,56 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+
+<style>
+    #LogInForm {
+        position:absolute;
+        left:40%;
+        top:40%;
+        border: 2px solid black;
+        padding: 25px;
+
+    }
+</style>
 <!-- Log in need to be connected to log in method once created -->
-<div class="text-center">
-    <form>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+<div class="text-center" id="LogInForm">
+    
+    @using (Html.BeginForm("Authorize", "Login",FormMethod.Post))
+
+    { 
+    <table>
+        <tr>
+
+            <td><h2>Log In</h2></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.ID)</td>
+            <td>@Html.TextBoxFor(model => model.ID)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>@Html.ValidationMessageFor(model => model.ID)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Password)</td>
+            <td>@Html.EditorFor(model => model.Password)</td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" name="name" value="Login">
+                <input type="reset" name="name" value="Clear">
+            </td>
+        </tr>
+
+
+    </table>
+    }
+    
+    
+    <br>
+
+    
+  
 </div>
