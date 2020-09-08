@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SoftwareProcess.Data;
@@ -26,16 +28,24 @@ namespace SoftwareProcess.Controllers
             return View();
         }
 
-
+        public IActionResult Authorize() {
+            return View();
+        }
 
         [HttpPost]
-        public async Task<IActionResult> Authorize(SoftwareProcess.Models.Student model, [Bind("ID,First_name,Surname,Institution,Department,Email_address,LDFTC,Password")] Student student) {
+        public async Task<IActionResult> Authorize(int id, string password) {
 
-            if (model.ID != student.ID) { 
+            var Student = await _context.Students
+                .FirstOrDefaultAsync(m => m.ID == id);
+            
+            if (id == Student.ID && password == Student.Password)
+            {
+                return View(Student);
+            }
+            else {
+                return NotFound();
                 
             }
-
-                return View();
         }
 
     }
