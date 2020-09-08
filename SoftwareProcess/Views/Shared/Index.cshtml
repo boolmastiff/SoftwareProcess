@@ -1,0 +1,59 @@
+﻿@model SoftwareProcess.Models.Student
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    #LogInForm {
+        position:absolute;
+        left:40%;
+        top:40%;
+        border: 2px solid black;
+        padding: 25px;
+
+    }
+</style>
+<!-- Log in need to be connected to log in method once created -->
+<div class="text-center" id="LogInForm">
+    
+    @using (Html.BeginForm("Authorize", "Login",FormMethod.Post))
+
+    { 
+    <table>
+        <tr>
+
+            <td><h2>Log In</h2></td>
+            <td><h>Username or Password invalid</h></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.ID)</td>
+            <td>@Html.TextBoxFor(model => model.ID)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>@Html.ValidationMessageFor(model => model.ID)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Password)</td>
+            <td>@Html.EditorFor(model => model.Password)</td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" name="name" value="Login">
+                <input type="reset" name="name" value="Clear">
+            </td>
+        </tr>
+
+
+    </table>
+    }
+    
+    
+    <br>
+
+    
+  
+</div>
