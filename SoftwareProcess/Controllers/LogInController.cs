@@ -23,7 +23,11 @@ namespace SoftwareProcess.Controllers
         }
 
 
-
+        public async Task<IActionResult> AdminLogin(int id, string password) {
+            var LectureAdmin = await _context.LectureAdmins
+                .FirstOrDefaultAsync(m => m.ID == id);
+            return View(LectureAdmin);
+        }
         public IActionResult Index()
         {
             return View();
@@ -39,13 +43,34 @@ namespace SoftwareProcess.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Authorize(int id, string password) {
-
-            //    var Student = await _context.Students.FindAsync(id);
-            
-                var Student = await _context.Students
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (Student == null) {
+            // if id or password not entered, returns to index, with added error message
+            if (id == 0 || password == null)
+            {
                 return RedirectToAction(nameof(Index));
+            }
+            // declares Student variable, goes into UcolContext.Students database, finds and returns object where ID's match
+            var Student = await _context.Students
+                .FirstOrDefaultAsync(m => m.ID == id);
+
+            // if No result found when declaring Student Variable. it will run this
+            if (Student == null) {
+                // declares LectureAdmin variable, goes into UcolContext.LectureAdmin database, finds and returns object where ID's match
+                var LectureAdmin = await _context.LectureAdmins
+                .FirstOrDefaultAsync(m => m.ID == id);
+
+                // checks to see if id & password entered match database
+                if (id == LectureAdmin.ID && password == LectureAdmin.Password)
+                {
+                    return RedirectToAction(nameof(AdminLogin), new {id = LectureAdmin.ID, password = LectureAdmin.Password});
+                    //return View(LectureAdmin);
+                }
+                else
+                {
+                    //returns to Index page
+                    return RedirectToAction(nameof(Index));
+
+                }
+
             }
 
             else if (id == Student.ID && password == Student.Password)
