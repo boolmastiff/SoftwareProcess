@@ -6,12 +6,21 @@
 
 <style>
     #LogInForm {
-        position:absolute;
-        left:40%;
-        top:40%;
-        border: 2px solid black;
-        padding: 25px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 70vh;
+        top: 40%;
+        align-items: center;
+        justify-content: center;
+    }
 
+    fieldset {
+        width: 350px;
+    }
+
+    input {
+        margin: 0px 10px;
     }
 </style>
 <!-- Log in need to be connected to log in method once created -->
@@ -20,34 +29,38 @@
     @using (Html.BeginForm("Authorize", "Login",FormMethod.Post))
 
     { 
-    <table>
-        <tr>
-
-            <td><h2>Log In</h2></td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(model => model.ID)</td>
-            <td>@Html.TextBoxFor(model => model.ID)</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>@Html.ValidationMessageFor(model => model.ID)</td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(model => model.Password)</td>
-            <td>@Html.EditorFor(model => model.Password)</td>
-        </tr>
-        
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" name="name" value="Login">
-                <input type="reset" name="name" value="Clear">
-            </td>
-        </tr>
+    <fieldset>
+        <legend>Login</legend>
+        <table>
 
 
-    </table>
+            <tr>
+                <td>@Html.LabelFor(model => model.ID)<br>
+                <td>@Html.TextBoxFor(model => model.ID)<br>
+            </tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.ID)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Password)</td>
+                <td>@Html.EditorFor(model => model.Password)</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="name" value="Login">
+                    <input type="reset" name="name" value="Clear">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+    </fieldset>
     }
     
     
