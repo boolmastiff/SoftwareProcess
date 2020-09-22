@@ -13,8 +13,6 @@ namespace SoftwareProcess.Migrations
                 {
                     ID = table.Column<int>(nullable: false),
                     Password = table.Column<string>(nullable: false),
-                    First_name = table.Column<string>(nullable: false),
-                    Surname = table.Column<string>(nullable: false),
                     DOB = table.Column<DateTime>(nullable: false),
                     Phone = table.Column<string>(nullable: true)
                 },

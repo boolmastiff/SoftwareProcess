@@ -8,8 +8,8 @@ namespace SoftwareProcess.Models
 {
     public class Class
     {
-        public string Module_Code { get; set; }
-        public string Intake_Code { get; set; }
+        public int ID { get; set; }
+        public int CourseID { get; set; }
         public DateTime Start_DateTime { get; set; }
         public int Duration { get; set; }
         public string Type { get; set; }

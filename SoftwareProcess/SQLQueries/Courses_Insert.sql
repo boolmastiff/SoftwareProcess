@@ -1,23 +1,4 @@
-﻿CREATE TABLE Courses(
-   Year                          INTEGER  NOT NULL
-  ,Programme_Code                VARCHAR(6) NOT NULL
-  ,Programme_Version_Description VARCHAR(82) NOT NULL
-  ,Intake_Code                   VARCHAR(3) NOT NULL
-  ,Ministry_Code                 VARCHAR(6) NOT NULL
-  ,ProgPoints                    INTEGER  NOT NULL
-  ,Owner_Faculty                 VARCHAR(11) NOT NULL
-  ,ProgLevel                     VARCHAR(7) NOT NULL
-  ,Programme_EFTS                INTEGER  NOT NULL
-  ,Module_Code                   VARCHAR(8) NOT NULL 
-  ,Module_Description            VARCHAR(42) NOT NULL
-  ,Level                         VARCHAR(7) NOT NULL
-  ,Module_Credits                INTEGER  NOT NULL
-  ,Module_EFTS                   NUMERIC(5,3) NOT NULL
-  ,TSC_Category                  VARCHAR(2) NOT NULL
-  ,Funding_Classification        INTEGER  NOT NULL
-  ,PRIMARY KEY (Intake_Code, Module_Code)
-);
-INSERT INTO Courses(Year,Programme_Code,Programme_Version_Description,Intake_Code,Ministry_Code,ProgPoints,Owner_Faculty,ProgLevel,Programme_EFTS,Module_Code,Module_Description,Level,Module_Credits,Module_EFTS,TSC_Category,Funding_Classification) VALUES (2020,'PBIACT','Bachelor of Information and Communications Technology - Level 7 - Palmerston North','FY1','MA4000',360,'104 IS Team','Level 7',3,'BI100100','D101 Programming Fundamentals','Level 5',15,0.125,'B2',6);
+﻿INSERT INTO Courses(Year,Programme_Code,Programme_Version_Description,Intake_Code,Ministry_Code,ProgPoints,Owner_Faculty,ProgLevel,Programme_EFTS,Module_Code,Module_Description,Level,Module_Credits,Module_EFTS,TSC_Category,Funding_Classification) VALUES (2020,'PBIACT','Bachelor of Information and Communications Technology - Level 7 - Palmerston North','FY1','MA4000',360,'104 IS Team','Level 7',3,'BI100100','D101 Programming Fundamentals','Level 5',15,0.125,'B2',6);
 INSERT INTO Courses(Year,Programme_Code,Programme_Version_Description,Intake_Code,Ministry_Code,ProgPoints,Owner_Faculty,ProgLevel,Programme_EFTS,Module_Code,Module_Description,Level,Module_Credits,Module_EFTS,TSC_Category,Funding_Classification) VALUES (2020,'PBIACT','Bachelor of Information and Communications Technology - Level 7 - Palmerston North','FY1','MA4000',360,'104 IS Team','Level 7',3,'BI100101','D111 Database Fundamentals','Level 5',15,0.125,'B2',6);
 INSERT INTO Courses(Year,Programme_Code,Programme_Version_Description,Intake_Code,Ministry_Code,ProgPoints,Owner_Faculty,ProgLevel,Programme_EFTS,Module_Code,Module_Description,Level,Module_Credits,Module_EFTS,TSC_Category,Funding_Classification) VALUES (2020,'PBIACT','Bachelor of Information and Communications Technology - Level 7 - Palmerston North','FY1','MA4000',360,'104 IS Team','Level 7',3,'BI100103','I102 Technical Support Fundamentals','Level 5',15,0.125,'B2',6);
 INSERT INTO Courses(Year,Programme_Code,Programme_Version_Description,Intake_Code,Ministry_Code,ProgPoints,Owner_Faculty,ProgLevel,Programme_EFTS,Module_Code,Module_Description,Level,Module_Credits,Module_EFTS,TSC_Category,Funding_Classification) VALUES (2020,'PBIACT','Bachelor of Information and Communications Technology - Level 7 - Palmerston North','FY1','MA4000',360,'104 IS Team','Level 7',3,'BI100104','I111 Web Fundamentals','Level 5',15,0.125,'B2',6);

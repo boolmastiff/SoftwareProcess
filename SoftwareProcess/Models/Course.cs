@@ -7,6 +7,7 @@ namespace SoftwareProcess.Models
 {
     public class Course
     {
+        public int ID { get; set; }
         public int Year { get; set; }
         public string Programme_Code { get; set; }
         public string Programme_Version_Description { get; set; }
@@ -17,7 +18,7 @@ namespace SoftwareProcess.Models
         public string ProgLevel { get; set; }
         public int Programme_EFTS { get; set; }
         public string Module_Code { get; set; }
-        public string Module_Descriptiont { get; set; }
+        public string Module_Description { get; set; }
         public string Level { get; set; }
         public int Module_Credits { get; set; }
         public float Module_EFTS { get; set; }
