@@ -25,7 +25,7 @@ namespace SoftwareProcess.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CourseID = table.Column<int>(nullable: true),
                     Start_DateTime = table.Column<DateTime>(nullable: false),
-                    Duration = table.Column<int>(nullable: false),
+                    Duration = table.Column<float>(nullable: false),
                     Type = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

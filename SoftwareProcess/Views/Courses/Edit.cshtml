@@ -1,0 +1,109 @@
+﻿@model SoftwareProcess.Models.Course
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programme_Code" class="control-label"></label>
+                <input asp-for="Programme_Code" class="form-control" />
+                <span asp-validation-for="Programme_Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programme_Version_Description" class="control-label"></label>
+                <input asp-for="Programme_Version_Description" class="form-control" />
+                <span asp-validation-for="Programme_Version_Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Intake_Code" class="control-label"></label>
+                <input asp-for="Intake_Code" class="form-control" />
+                <span asp-validation-for="Intake_Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ministry_Code" class="control-label"></label>
+                <input asp-for="Ministry_Code" class="form-control" />
+                <span asp-validation-for="Ministry_Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProgPoints" class="control-label"></label>
+                <input asp-for="ProgPoints" class="form-control" />
+                <span asp-validation-for="ProgPoints" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Owner_Faculty" class="control-label"></label>
+                <input asp-for="Owner_Faculty" class="form-control" />
+                <span asp-validation-for="Owner_Faculty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProgLevel" class="control-label"></label>
+                <input asp-for="ProgLevel" class="form-control" />
+                <span asp-validation-for="ProgLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programme_EFTS" class="control-label"></label>
+                <input asp-for="Programme_EFTS" class="form-control" />
+                <span asp-validation-for="Programme_EFTS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Module_Code" class="control-label"></label>
+                <input asp-for="Module_Code" class="form-control" />
+                <span asp-validation-for="Module_Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Module_Description" class="control-label"></label>
+                <input asp-for="Module_Description" class="form-control" />
+                <span asp-validation-for="Module_Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Level" class="control-label"></label>
+                <input asp-for="Level" class="form-control" />
+                <span asp-validation-for="Level" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Module_Credits" class="control-label"></label>
+                <input asp-for="Module_Credits" class="form-control" />
+                <span asp-validation-for="Module_Credits" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Module_EFTS" class="control-label"></label>
+                <input asp-for="Module_EFTS" class="form-control" />
+                <span asp-validation-for="Module_EFTS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TSC_Category" class="control-label"></label>
+                <input asp-for="TSC_Category" class="form-control" />
+                <span asp-validation-for="TSC_Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Funding_Classification" class="control-label"></label>
+                <input asp-for="Funding_Classification" class="form-control" />
+                <span asp-validation-for="Funding_Classification" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

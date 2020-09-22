@@ -57,9 +57,12 @@ namespace SoftwareProcess.Controllers
                 // declares LectureAdmin variable, goes into UcolContext.LectureAdmin database, finds and returns object where ID's match
                 var LectureAdmin = await _context.LectureAdmins
                 .FirstOrDefaultAsync(m => m.ID == id);
-
-                // checks to see if id & password entered match database
-                if (id == LectureAdmin.ID && password == LectureAdmin.Password)
+                if (LectureAdmin == null)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                    // checks to see if id & password entered match database
+                    if (id == LectureAdmin.ID && password == LectureAdmin.Password)
                 {
                     return RedirectToAction(nameof(AdminLogin), new {id = LectureAdmin.ID, password = LectureAdmin.Password});
                     //return View(LectureAdmin);

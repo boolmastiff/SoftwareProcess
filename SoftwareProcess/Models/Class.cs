@@ -11,7 +11,7 @@ namespace SoftwareProcess.Models
         public int ID { get; set; }
         public int CourseID { get; set; }
         public DateTime Start_DateTime { get; set; }
-        public int Duration { get; set; }
+        public float Duration { get; set; }
         public string Type { get; set; }
     }
 }

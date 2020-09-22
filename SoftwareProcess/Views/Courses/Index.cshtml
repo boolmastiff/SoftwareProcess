@@ -1,0 +1,133 @@
+﻿@model IEnumerable<SoftwareProcess.Models.Course>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Courses</h1>
+
+<!--<p>
+    <a asp-action="Create">Create New</a>
+</p>-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programme_Code)
+            </th>
+            <!--<th>
+                @Html.DisplayNameFor(model => model.Programme_Version_Description)
+            </th>-->
+            <th>
+                @Html.DisplayNameFor(model => model.Intake_Code)
+            </th>
+            <!-- <th>
+                @Html.DisplayNameFor(model => model.Ministry_Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProgPoints)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Owner_Faculty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProgLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programme_EFTS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Module_Code)
+            </th>-->
+            <th>
+                @Html.DisplayNameFor(model => model.Module_Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Level)
+            </th>
+            <!--<th>
+                @Html.DisplayNameFor(model => model.Module_Credits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Module_EFTS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TSC_Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Funding_Classification)
+            </th>-->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Programme_Code)
+                </td>
+                <!--<td>
+                    @Html.DisplayFor(modelItem => item.Programme_Version_Description)
+                </td>-->
+                <td>
+                    @Html.DisplayFor(modelItem => item.Intake_Code)
+                </td>
+                <!--<td>
+                    @Html.DisplayFor(modelItem => item.Ministry_Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProgPoints)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Owner_Faculty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProgLevel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Programme_EFTS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Module_Code)
+                </td>-->
+                <td>
+                    @Html.DisplayFor(modelItem => item.Module_Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Level)
+                </td>
+                <!--<td>
+                    @Html.DisplayFor(modelItem => item.Module_Credits)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Module_EFTS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TSC_Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Funding_Classification)
+                </td>-->
+                <td>
+                    <!--<a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>-->
+                    <a asp-controller="Classes" asp-action="Create" asp-route-id="@item.ID">Add Class</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
