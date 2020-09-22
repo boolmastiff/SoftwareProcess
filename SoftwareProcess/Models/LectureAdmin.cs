@@ -11,10 +11,12 @@ namespace SoftwareProcess.Models
     public class LectureAdmin
     {
         public int ID { get; set; }
+        public string Password { get; set; }
+        public string First_Name { get; set; }
+        public string Surname { get; set; }
         [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
         public string Phone { get; set; }
-        public string Password { get; set; }
 
     }
 }

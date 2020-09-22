@@ -11,10 +11,10 @@ namespace SoftwareProcess.Migrations
                 name: "LectureAdmins",
                 columns: table => new
                 {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserName = table.Column<string>(nullable: true),
-                    UserPassword = table.Column<string>(nullable: true),
+                    ID = table.Column<int>(nullable: false),
+                    Password = table.Column<string>(nullable: false),
+                    First_name = table.Column<string>(nullable: false),
+                    Surname = table.Column<string>(nullable: false),
                     DOB = table.Column<DateTime>(nullable: false),
                     Phone = table.Column<string>(nullable: true)
                 },
@@ -27,8 +27,7 @@ namespace SoftwareProcess.Migrations
                 name: "Students",
                 columns: table => new
                 {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ID = table.Column<int>(nullable: false),
                     First_name = table.Column<string>(nullable: true),
                     Surname = table.Column<string>(nullable: true),
                     ID_number = table.Column<int>(nullable: false),
