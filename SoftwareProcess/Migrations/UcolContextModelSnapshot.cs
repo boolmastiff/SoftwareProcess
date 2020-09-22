@@ -43,7 +43,7 @@ namespace SoftwareProcess.Migrations
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("int");
 
                     b.Property<string>("Department")
                         .HasColumnType("nvarchar(max)");
