@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SoftwareProcess.Data;
 
 namespace SoftwareProcess.Migrations
 {
     [DbContext(typeof(UcolContext))]
-    partial class UcolContextModelSnapshot : ModelSnapshot
+    [Migration("20201013020329_TestSchedule")]
+    partial class TestSchedule
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -163,43 +165,28 @@ namespace SoftwareProcess.Migrations
 
                     b.ToTable("Students");
                 });
-            modelBuilder.Entity("SoftwareProcess.Models.StudentClass", b =>
-            {
-                b.Property<int>("ID")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnType("int")
-                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                b.Property<int>("ClassID")
-                    .HasColumnType("int");
-
-                b.Property<int>("StudentID")
-                    .HasColumnType("int");
-
-                b.HasKey("ID");
-
-                b.ToTable("StudentClasses");
-            });
             modelBuilder.Entity("SoftwareProcess.Models.TestSchedule", b =>
-            {
-                b.Property<int>("ID")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnType("int")
-                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                b.Property<int>("ClassID")
-                    .HasColumnType("int");
+                    b.Property<int>("ClassID")
+                        .HasColumnType("int");
 
-                b.Property<float>("Duration")
-                    .HasColumnType("real");
+                    b.Property<float>("Duration")
+                        .HasColumnType("real");
 
-                b.Property<DateTime>("StartTime")
-                    .HasColumnType("datetime2");
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
 
-                b.HasKey("ID");
+                    b.HasKey("ID");
 
-                b.ToTable("TestSchedules");
-            });#pragma warning restore 612, 618
+                    b.ToTable("TestSchedules");
+                });
+#pragma warning restore 612, 618
         }
     }
 }
