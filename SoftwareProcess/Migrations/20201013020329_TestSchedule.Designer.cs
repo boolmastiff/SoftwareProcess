@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SoftwareProcess.Data;
 
 namespace SoftwareProcess.Migrations
 {
     [DbContext(typeof(UcolContext))]
-    partial class UcolContextModelSnapshot : ModelSnapshot
+    [Migration("20201013020329_TestSchedule")]
+    partial class TestSchedule
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
