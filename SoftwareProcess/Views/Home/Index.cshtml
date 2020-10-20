@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
+<!-- CSS for this view page -->
 <style>
     #LogInForm {
         margin: 0;
@@ -16,56 +16,72 @@
     }
 
     fieldset {
-        width: 350px;
+        width: auto;
+        border: 5px solid #777;
+        padding: 5px;
     }
 
     input {
-        margin: 0px 10px;
+        margin: 0px;
+        padding: 0px;
+        width: 140px;
+        align-content: center;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    td {
+        width: 100%;
     }
 </style>
 <!-- Log in need to be connected to log in method once created -->
 <div class="text-center" id="LogInForm">
-    
-    @using (Html.BeginForm("Authorize", "Login",FormMethod.Post))
+    <!-- Connects to the Login Controller, Goes to Authorize Method when form is submited  -->
+    @using (Html.BeginForm("Authorize", "Login", FormMethod.Post))
 
-    { 
-    <fieldset>
-        <legend>Login</legend>
-        <table>
+    {
+        <fieldset>
+            <table>
+                <!-- Title -->
+                <h2>Login</h2>
 
+                <!-- Gets label and input for ID -->
+                <tr>
+                    <td>@Html.LabelFor(model => model.ID)</td>
+                    <td>@Html.TextBoxFor(model => model.ID)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.ID)</td>
+                </tr>
+                <!-- Gets label and input for Password -->
+                <tr>
+                    <td>@Html.LabelFor(model => model.Password)</td>
+                    <td>@Html.EditorFor(model => model.Password)</td>
+                </tr>
 
-            <tr>
-                <td>@Html.LabelFor(model => model.ID)<br>
-                <td>@Html.TextBoxFor(model => model.ID)<br>
-            </tr>
-            <tr>
-                <td></td>
-                <td>@Html.ValidationMessageFor(model => model.ID)</td>
-            </tr>
-            <tr>
-                <td>@Html.LabelFor(model => model.Password)</td>
-                <td>@Html.EditorFor(model => model.Password)</td>
-            </tr>
+                <tr>
+                    <!--Submits th form -->
+                    <td><input type="submit" name="name" value="Login"></td>
+                    <td>
 
-            <tr>
-                <td></td>
-                <td>
-                    <input type="submit" name="name" value="Login">
-                    <input type="reset" name="name" value="Clear">
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-            </tr>
+                        <input type="reset" name="name" value="Clear">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-        </table>
-    </fieldset>
+            </table>
+        </fieldset>
     }
-    
-    
+
+
     <br>
 
-    
-  
+
+
 </div>

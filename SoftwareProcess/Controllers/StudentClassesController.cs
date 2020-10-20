@@ -10,24 +10,22 @@ using SoftwareProcess.Models;
 
 namespace SoftwareProcess.Controllers
 {
-    public class StudentsController : Controller
+    public class StudentClassesController : Controller
     {
         private readonly UcolContext _context;
 
-        public StudentsController(UcolContext context)
+        public StudentClassesController(UcolContext context)
         {
             _context = context;
         }
 
-        // GET: Students
+        // GET: StudentClasses
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Students.ToListAsync());
+            return View(await _context.StudentClasses.ToListAsync());
         }
 
-        //Need to create Method to Log in
-
-        // GET: Students/Details/5
+        // GET: StudentClasses/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,39 +33,39 @@ namespace SoftwareProcess.Controllers
                 return NotFound();
             }
 
-            var student = await _context.Students
+            var studentClass = await _context.StudentClasses
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (student == null)
+            if (studentClass == null)
             {
                 return NotFound();
             }
 
-            return View(student);
+            return View(studentClass);
         }
 
-        // GET: Students/Create
+        // GET: StudentClasses/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Students/Create
+        // POST: StudentClasses/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,First_name,Surname,Institution,Department,Email_address,LDFTC")] Student student)
+        public async Task<IActionResult> Create([Bind("ID,ClassID,StudentID")] StudentClass studentClass)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(student);
+                _context.Add(studentClass);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(student);
+            return View(studentClass);
         }
 
-        // GET: Students/Edit/5
+        // GET: StudentClasses/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -75,22 +73,22 @@ namespace SoftwareProcess.Controllers
                 return NotFound();
             }
 
-            var student = await _context.Students.FindAsync(id);
-            if (student == null)
+            var studentClass = await _context.StudentClasses.FindAsync(id);
+            if (studentClass == null)
             {
                 return NotFound();
             }
-            return View(student);
+            return View(studentClass);
         }
 
-        // POST: Students/Edit/5
+        // POST: StudentClasses/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,First_name,Surname,Institution,Department,Email_address,LDFTC,Password")] Student student)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,ClassID,StudentID")] StudentClass studentClass)
         {
-            if (id != student.ID)
+            if (id != studentClass.ID)
             {
                 return NotFound();
             }
@@ -99,12 +97,12 @@ namespace SoftwareProcess.Controllers
             {
                 try
                 {
-                    _context.Update(student);
+                    _context.Update(studentClass);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!StudentExists(student.ID))
+                    if (!StudentClassExists(studentClass.ID))
                     {
                         return NotFound();
                     }
@@ -115,10 +113,10 @@ namespace SoftwareProcess.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(student);
+            return View(studentClass);
         }
 
-        // GET: Students/Delete/5
+        // GET: StudentClasses/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -126,30 +124,30 @@ namespace SoftwareProcess.Controllers
                 return NotFound();
             }
 
-            var student = await _context.Students
+            var studentClass = await _context.StudentClasses
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (student == null)
+            if (studentClass == null)
             {
                 return NotFound();
             }
 
-            return View(student);
+            return View(studentClass);
         }
 
-        // POST: Students/Delete/5
+        // POST: StudentClasses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var student = await _context.Students.FindAsync(id);
-            _context.Students.Remove(student);
+            var studentClass = await _context.StudentClasses.FindAsync(id);
+            _context.StudentClasses.Remove(studentClass);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool StudentExists(int id)
+        private bool StudentClassExists(int id)
         {
-            return _context.Students.Any(e => e.ID == id);
+            return _context.StudentClasses.Any(e => e.ID == id);
         }
     }
 }
