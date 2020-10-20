@@ -4,7 +4,8 @@
     ViewData["Title"] = "Create";
 }
 @{
-    var data = ViewBag.Message;
+    var Id = ViewBag.Id;
+    var Name = ViewBag.Name;
 }
 
 <h1>Create</h1>
@@ -16,7 +17,10 @@
         <form asp-action="Create" asp-route-id="">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <input type="hidden" asp-for="CourseID" class="form-control" value="@data"/>
+                <input type="hidden" asp-for="CourseID" class="form-control" value="@Id" />
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="CourseName" class="form-control" value="@Name" />
             </div>
             <div class="form-group">
                 <label asp-for="Start_DateTime" class="control-label"></label>

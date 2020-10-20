@@ -44,8 +44,9 @@ namespace SoftwareProcess.Controllers
         }
 
         // GET: TestSchedules/Create
-        public IActionResult Create()
+        public IActionResult Create(int? id)
         {
+            ViewBag.Message = id;
             return View();
         }
 

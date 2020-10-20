@@ -46,7 +46,10 @@ namespace SoftwareProcess.Controllers
         // GET: Classes/Create
         public IActionResult Create(int? id)
         {
-            ViewBag.Message = id;
+            ViewBag.Id = id;
+            var courses = _context.Courses.ToList();
+            var coursename = courses.Find(x => x.ID == id).Module_Description;
+            ViewBag.Name = coursename;
             return View();
         }
 
@@ -55,7 +58,7 @@ namespace SoftwareProcess.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,CourseID,Start_DateTime,Duration,Type")] Class @class)
+        public async Task<IActionResult> Create([Bind("ID,CourseID,Start_DateTime,Duration,Type,CourseName")] Class @class)
         {
             if (ModelState.IsValid)
             {

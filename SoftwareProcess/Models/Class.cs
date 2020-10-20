@@ -13,5 +13,6 @@ namespace SoftwareProcess.Models
         public DateTime Start_DateTime { get; set; }
         public float Duration { get; set; }
         public string Type { get; set; }
+        public string CourseName { get; set; }
     }
 }
