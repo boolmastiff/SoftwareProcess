@@ -44,6 +44,7 @@ namespace SoftwareProcess.Controllers
         }
 
         // GET: TestSchedules/Create
+        // The Class id is passed to this create function, so that the admins can easily link a test schedule to a class without needing to know its ID
         public IActionResult Create(int? id)
         {
             ViewBag.Message = id;

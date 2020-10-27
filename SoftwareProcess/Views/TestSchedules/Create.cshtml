@@ -15,6 +15,7 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!--This hidden field contains the ClassID that the test schedule is linked to-->
             <div class="form-group">
                 <input type="hidden" asp-for="ClassID" class="form-control" value="@data" />
             </div>

@@ -16,6 +16,7 @@
     <div class="col-md-4">
         <form asp-action="Create" asp-route-id="">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!--These hidden fields are here to give the courseId and course name to the class without the user being able to edit or see them-->
             <div class="form-group">
                 <input type="hidden" asp-for="CourseID" class="form-control" value="@Id" />
             </div>

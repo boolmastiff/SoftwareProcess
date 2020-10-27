@@ -5,13 +5,14 @@
 }
 
 <h1>Courses</h1>
-
+<!--We commented out the create button because the courses come directly from an external source.-->
 <!--<p>
     <a asp-action="Create">Create New</a>
 </p>-->
 <table class="table">
     <thead>
         <tr>
+            <!--Columns here have been commented out so that only the most important information is visible, so that the UI isn't cluttered.-->
             <th>
                 @Html.DisplayNameFor(model => model.ID)
             </th>
@@ -122,9 +123,12 @@
                     @Html.DisplayFor(modelItem => item.Funding_Classification)
                 </td>-->
                 <td>
+                    <!--We commented out the these buttons because the courses come directly from an external source.-->
                     <!--<a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>-->
+
+                    <!--This button passes the courses' id and passes it to the create class function-->
                     <a asp-controller="Classes" asp-action="Create" asp-route-id="@item.ID">Add Class</a>
                 </td>
             </tr>

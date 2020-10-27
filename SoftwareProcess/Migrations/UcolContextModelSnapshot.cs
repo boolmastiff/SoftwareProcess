@@ -203,9 +203,8 @@ namespace SoftwareProcess.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("TestSchedules");
-                });
-#pragma warning restore 612, 618
+                b.ToTable("TestSchedules");
+            });#pragma warning restore 612, 618
         }
     }
 }
