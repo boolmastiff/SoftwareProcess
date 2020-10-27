@@ -46,11 +46,11 @@ namespace SoftwareProcess.Controllers
         // GET: Classes/Create
         // The Create function here gets the integer variable of courseid that's passed to it from the Courses Index view.
         // The function then gets the course related to the courseid, to then pass the course name/module description to the class for viewing purposes through the ViewBag. 
-        public IActionResult Create(int? courseid)
+        public IActionResult Create(int? id)
         {
-            ViewBag.Id = courseid;
+            ViewBag.Id = id;
             var courses = _context.Courses.ToList();
-            var coursename = courses.Find(x => x.ID == courseid).Module_Description;
+            var coursename = courses.Find(x => x.ID == id).Module_Description;
             ViewBag.Name = coursename;
             return View();
         }
