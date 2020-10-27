@@ -1,0 +1,1 @@
+﻿INSERT INTO LectureAdmins(ID, DOB, Phone, Password, First_Name, Surname) VALUES (1, '12/9/2002 10:10:00 AM', 123123123, 'admin', 'Sheridan', 'Boyd');
